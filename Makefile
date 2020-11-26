@@ -3,6 +3,10 @@ PROJECT_ID=terraform-project-example
 LOCAL_TAG=terraform-app:$(GITHUB_SHA)
 REMOTE_TAG=asmusj024/$(PROJECT_ID)/$(LOCAL_TAG)
 
+
+log_var:
+   echo $(DOCKER_USERNAME)
+
 run-local:
 	docker-compose up
 
