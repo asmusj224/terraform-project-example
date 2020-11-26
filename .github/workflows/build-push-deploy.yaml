@@ -27,6 +27,6 @@ jobs:
           repository: asmusj024/terraform-project-example
           tag_with_sha: true
       - name: Check terraform
-        run: terraform -v
+        run: echo ${GITHUB_SHA::8}
         env:
           CI: true
