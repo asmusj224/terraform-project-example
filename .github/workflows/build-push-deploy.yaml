@@ -21,14 +21,10 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
     - name: Build
-       run: |-
-         make build
+    - run: make build
     - name: Login
-        run: |-
-          make login-docker-hub
-    -name : Push
-        run: |-
-          make push
-
+    - run: make login-docker-hub
+    - name: Push
+    - run: make push
       env:
         CI: true
