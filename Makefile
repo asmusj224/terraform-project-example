@@ -6,9 +6,6 @@ REMOTE_TAG=asmusj024/$(PROJECT_ID)/$(LOCAL_TAG)
 run-local:
 	docker-compose up
 
-login-docker-hub:
-	echo  $DOCKER_PASSWORD | docker login -u $ DOCKER_USERNAME --password-stdin
-
 build-container:
 	docker build -t $(LOCAL_TAG) .
 
