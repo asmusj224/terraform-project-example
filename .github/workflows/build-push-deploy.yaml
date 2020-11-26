@@ -5,6 +5,8 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      SHA8: ${GITHUB_SHA::8}
 
     strategy:
       matrix:
@@ -29,6 +31,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${GITHUB_SHA::8}
+          tags: $SHA8
         env:
           CI: true
