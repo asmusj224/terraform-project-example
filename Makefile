@@ -7,7 +7,7 @@ run-local:
 	docker-compose up
 
 login-docker-hub:
-	echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+	echo  $DOCKER_PASSWORD | docker login -u $ DOCKER_USERNAME --password-stdin
 
 build-container:
 	docker build -t $(LOCAL_TAG) .

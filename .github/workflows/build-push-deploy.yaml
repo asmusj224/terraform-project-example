@@ -21,6 +21,10 @@ jobs:
       - run: npm test
       - name: Build
         run: make build
+      - name: Set ENV
+        run: |-
+          echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" >> $DOCKER_USERNAME
+          echo "DOCKER_PASSWORD=${{ secrets.DOCKER_USERNAME }}" >> $DOCKER_PASSWORD
       - name: Login
         run: make login-docker-hub
       - name: push
