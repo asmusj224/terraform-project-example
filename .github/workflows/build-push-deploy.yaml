@@ -26,5 +26,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: asmusj024/terraform-project-example
           tag_with_sha: true
+      - name: Check terraform
+        run: terraform -v
         env:
           CI: true
